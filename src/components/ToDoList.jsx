@@ -11,7 +11,9 @@ const ToDoList = ({ toDos, listName, setToDos }) => {
     setActiveForm(prev => !prev)
   }
 
-  const addToDo = (toDo) => {
+  const addToDo = (toDoFields) => {
+    const id = stringHash(toDoFields.title)
+    const toDo = { ...toDoFields, id }
     setToDos(prev => [...prev, toDo])
   }
 
