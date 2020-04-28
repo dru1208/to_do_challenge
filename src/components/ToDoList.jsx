@@ -19,7 +19,7 @@ const ToDoList = ({ toDos, listName }) => {
         className="list-button"
         onClick={toggleForm}
       >
-        Add ToDo
+        { activeForm ? "Hide Form" : "Add ToDo" }
       </button>
       { activeForm ? <ToDoForm addToDo={""} /> : null }
     </div>
