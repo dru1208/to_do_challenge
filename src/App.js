@@ -29,7 +29,11 @@ function App() {
 
   return (
     <div className="App">
-      <ToDoList toDos={toDos} listName="Things To Do" />
+      <ToDoList
+        toDos={toDos}
+        setToDos={setToDos}
+        listName="Things To Do"
+      />
     </div>
   );
 }

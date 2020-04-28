@@ -4,11 +4,15 @@ import ToDosHeader from "./ToDosHeader"
 import ToDoForm from "./ToDoForm"
 import "./ToDos.css"
 
-const ToDoList = ({ toDos, listName }) => {
+const ToDoList = ({ toDos, listName, setToDos }) => {
   const [activeForm, setActiveForm] = useState(false)
 
   const toggleForm = () => {
     setActiveForm(prev => !prev)
+  }
+
+  const addToDo = (toDo) => {
+    setToDos(prev => [...prev, toDo])
   }
 
   return (
@@ -21,7 +25,7 @@ const ToDoList = ({ toDos, listName }) => {
       >
         { activeForm ? "Hide Form" : "Add ToDo" }
       </button>
-      { activeForm ? <ToDoForm addToDo={""} /> : null }
+      { activeForm ? <ToDoForm addToDo={addToDo} /> : null }
     </div>
   )
 }

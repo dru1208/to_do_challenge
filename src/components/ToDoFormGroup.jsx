@@ -1,15 +1,24 @@
 import React from "react"
 
-const ToDoFormGroup = ({ label, fieldName}) => {
+const ToDoFormGroup = ({ label, fieldName, value, updateFormField }) => {
+  const onChange = (e) => {
+    updateFormField(fieldName, e.target.value)
+  }
+
   return (
     <div className="form-group">
       <label
-        for={fieldName}
+        htmlFor={fieldName}
         className="form-label"
       >
         {label}
       </label>
-      <input type="text" name={fieldName} />
+      <input
+        type="text"
+        name={fieldName}
+        value={value}
+        onChange={onChange}
+      />
     </div>
   )
 }
