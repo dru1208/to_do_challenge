@@ -11,7 +11,7 @@ const ToDoFormGroup = ({ label, fieldName, value, updateFormField }) => {
         htmlFor={fieldName}
         className="form-label"
       >
-        {label}
+        {label}:
       </label>
       <input
         type="text"
