@@ -1,0 +1,9 @@
+.lists-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.add-list-button {
+  margin: 10px;
+}
+

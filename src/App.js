@@ -12,6 +12,10 @@ function App() {
   const firstList = useToDos()
   const [lists, setLists] = useState([firstList])
 
+  const renderAddListButton = () => {
+    return lists.length < 3 ? <AddToDoList /> : null
+  }
+
   return (
     <div className="lists-container">
       {
@@ -25,6 +29,7 @@ function App() {
           )
         })
       }
+      { renderAddListButton() }
     </div>
   );
 }
