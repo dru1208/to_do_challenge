@@ -1,0 +1,21 @@
+.list-container {
+  width: 30%;
+  padding: 15px;
+}
+
+.list-button {
+
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.item-subcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
