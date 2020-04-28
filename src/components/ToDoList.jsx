@@ -1,28 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 import ToDo from "./ToDo"
 import ToDosHeader from "./ToDosHeader"
 import ToDoForm from "./ToDoForm"
-import "./ToDos.css"
 
-import stringHash from "string-hash"
-
-const ToDoList = ({ toDos, listName, setToDos }) => {
-  const [activeForm, setActiveForm] = useState(false)
-
-  const toggleForm = () => {
-    setActiveForm(prev => !prev)
-  }
-
-  const addToDo = (toDoFields) => {
-    const id = stringHash(toDoFields.title)
-    const toDo = { ...toDoFields, id }
-    setToDos(prev => [...prev, toDo])
-  }
-
-  const removeToDo = (toDo) => {
-    const { id } = toDo
-    setToDos(prev => prev.filter((item) => item.id !== id))
-  }
+const ToDoList = ({ listInfo, listName }) => {
+  const { toDos, addToDo, removeToDo, activeForm, toggleForm } = listInfo
 
   return (
     <div className="list-container bordered">
