@@ -8,7 +8,7 @@ const ToDo = ({ toDo, removeToDo }) => {
   }
 
   return (
-    <div className="item-container">
+    <div className="item-container bordered">
       <div className="item-subcontainer">
         <div className="item-title">{title}</div>
         <button onClick={removeOnClick}>Delete</button>

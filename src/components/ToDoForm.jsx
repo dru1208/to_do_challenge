@@ -47,7 +47,7 @@ const ToDoForm = ({ addToDo }) => {
   }
 
   return (
-    <form className="form-container" onSubmit={onSubmit}>
+    <form className="form-container bordered" onSubmit={onSubmit}>
       {
         formProps.map((fieldProps, index) => {
           const { label, fieldName } = fieldProps

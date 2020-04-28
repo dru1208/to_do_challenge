@@ -25,7 +25,7 @@ const ToDoList = ({ toDos, listName, setToDos }) => {
   }
 
   return (
-    <div className="list-container">
+    <div className="list-container bordered">
       <ToDosHeader listName={listName} />
       {
         toDos.map((toDo, index) => {
