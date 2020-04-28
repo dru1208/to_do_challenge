@@ -1,15 +1,34 @@
 import React from "react"
+import ToDoFormGroup from "./ToDoFormGroup"
+
+const formProps = [
+  {
+    label: "Title",
+    fieldName: "title"
+  },
+  {
+    label: "Description",
+    fieldName: "description"
+  },
+  {
+    label: "Status",
+    fieldName: "status"
+  },
+  {
+    label: "Deadline",
+    fieldName: "deadline"
+  }
+]
 
 const ToDoForm = ({ addToDo }) => {
   return (
-    <div>
-      <form>
-        <input type="text" name="title" />
-        <input type="text" name="description" />
-        <input type="text" name="status" />
-        <input type="text" name="deadline" />
-      </form>
-    </div>
+    <form className="form-container">
+      {
+        formProps.map((fieldProps, index) =>
+          <ToDoFormGroup key={index} {...fieldProps} />
+        )
+      }
+    </form>
   )
 }
 
