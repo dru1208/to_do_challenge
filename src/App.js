@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ToDoList from "./components/ToDoList"
+
+// Statuses: In Progress, Completed, Inactive
+
+const defaultData = [
+  {
+    title: "Item 1",
+    description: "This is what I should be doing for item 1",
+    status: "Completed",
+    deadline: "Tomorrow"
+  },
+  {
+    title: "Item 2",
+    description: "This is what I should be doing for item 2",
+    status: "In Progress",
+    deadline: "Next Week"
+  },
+  {
+    title: "Item 3",
+    description: "This is what I should be doing for item 3",
+    status: "Inactive",
+    deadline: "TBD"
+  }
+]
 
 function App() {
+  const [toDos, setToDos] = useState(defaultData)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToDoList toDos={toDos} listName="Things To Do" />
     </div>
   );
 }
