@@ -4,7 +4,7 @@
 }
 
 .list-button {
-
+  margin: 12px;
 }
 
 .item-container {
@@ -18,4 +18,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.form-container {
+  padding: 12px;
 }
