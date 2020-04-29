@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import ToDosHeader from "./ToDosHeader"
 import PopulatedToDoList from "./PopulatedToDoList"
 import UnpopulatedToDoList from "./UnpopulatedToDoList"
+import ToDoFormToggle from "./ToDoFormToggle"
 import ToDoForm from "./ToDoForm"
 
 const ToDoList = ({ list, listName, dispatch }) => {
@@ -35,22 +36,16 @@ const ToDoList = ({ list, listName, dispatch }) => {
     setActiveForm(prev => !prev)
   }
 
-  const formButtonText = () => {
-    return activeForm ? "Hide Form" : "Add ToDo"
-  }
-
   return (
     <div className="list-container bordered">
       <ToDosHeader listName={listName} />
       {
         renderListContent()
       }
-      <button
-        className="list-button"
-        onClick={toggleForm}
-      >
-        { formButtonText() }
-      </button>
+      <ToDoFormToggle
+        toggleForm={toggleForm}
+        activeForm={activeForm}
+      />
       { activeForm ? <ToDoForm addToDo={addToDo} /> : null }
     </div>
   )
