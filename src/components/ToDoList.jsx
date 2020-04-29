@@ -1,7 +1,6 @@
 import React from "react"
 import ToDosHeader from "./ToDosHeader"
-import PopulatedToDoList from "./PopulatedToDoList"
-import UnpopulatedToDoList from "./UnpopulatedToDoList"
+import ToDoListContent from "./ToDoListContent"
 import ToDoFormToggle from "./ToDoFormToggle"
 import ToDoForm from "./ToDoForm"
 import useToggle from "../hooks/useToggle"
@@ -25,20 +24,12 @@ const ToDoList = ({ list, listName, dispatch }) => {
     dispatch(action)
   }
 
-  const renderListContent = () => {
-    return data.length > 0 ?
-      <PopulatedToDoList toDos={data} removeToDo={removeToDo} /> :
-      <UnpopulatedToDoList />
-  }
-
   const { activeForm, toggleForm } = useToggle()
 
   return (
     <div className="list-container bordered">
       <ToDosHeader listName={listName} />
-      {
-        renderListContent()
-      }
+      <ToDoListContent toDos={data} removeToDo={removeToDo} />
       <ToDoFormToggle
         toggleForm={toggleForm}
         activeForm={activeForm}
