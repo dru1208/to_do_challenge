@@ -1,9 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 import ToDosHeader from "./ToDosHeader"
 import PopulatedToDoList from "./PopulatedToDoList"
 import UnpopulatedToDoList from "./UnpopulatedToDoList"
 import ToDoFormToggle from "./ToDoFormToggle"
 import ToDoForm from "./ToDoForm"
+import useToggle from "../hooks/useToggle"
 
 const ToDoList = ({ list, listName, dispatch }) => {
   const { id, data } = list
@@ -30,11 +31,7 @@ const ToDoList = ({ list, listName, dispatch }) => {
       <UnpopulatedToDoList />
   }
 
-  const [activeForm, setActiveForm] = useState(false)
-
-  const toggleForm = () => {
-    setActiveForm(prev => !prev)
-  }
+  const { activeForm, toggleForm } = useToggle()
 
   return (
     <div className="list-container bordered">
