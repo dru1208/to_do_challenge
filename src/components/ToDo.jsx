@@ -1,10 +1,10 @@
 import React from "react"
 
 const ToDo = ({ toDo, removeToDo }) => {
-  const { title, description, status, deadline } = toDo
+  const { id, title, description, status, deadline } = toDo
 
   const removeOnClick = () => {
-    removeToDo(toDo)
+    removeToDo(id)
   }
 
   return (

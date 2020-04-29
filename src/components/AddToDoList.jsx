@@ -1,9 +1,15 @@
 import React from "react"
 
-const AddToDoList = () => {
+const AddToDoList = ({ dispatch }) => {
+  const onClick = () => dispatch({type: "ADD_LIST"})
   return (
     <div>
-      <button className="add-list-button">Add New List</button>
+      <button
+        className="add-list-button"
+        onClick={onClick}
+      >
+        Add New List
+      </button>
     </div>
   )
 }
